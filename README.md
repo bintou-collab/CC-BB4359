@@ -1,7 +1,4 @@
 ---
-layout: default
----
-
 # p5.js multi sketch template
 
 Please use this tempate to create a repository that contains your coursework for Creative Coding this semester. When you are creating a new item in your repository (either notes from a lecture, or a new assignment) please follow these two steps:
