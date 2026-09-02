@@ -1,5 +1,4 @@
 remote_theme: pages-themes/minimal@v0.2.0
 title: Creative Coding
 description: Class page for IDM NYU DM-GY 6063
-plugins:
-- jekyll-remote-theme 
+plugins: jekyll-theme-minimal
