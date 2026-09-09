@@ -5,9 +5,9 @@ const quotes = [
   { text: "aesthically pleasing with emotional impact", source: "Southern Methodist University" },
   { text: "unique and memorable brand experience", source: "Laura Valtere" },
   { text: "bridging the gap between technologists and artists", source: "Ahmad Moussa" },
-  { text: "creative dialogue with the computer", source: "Tim Rodenbrocker" },
+  { text: "creative dialogue with the computer", source: "Tim Rodenbroeker" },
   { text: "the paintbrush and the computer is the canvas", source: "University of York" },
-  { text: "experimental, playful, serendipitous, pushing boundaries", source: "Fabian Van Sluijs & Axelle van Wynsberghe" },
+  { text: "about wonder, about exploration, about learning", source: "Axelle van Wynsberghe" },
   { text: "an act of curiosity - an ongoing conversation with the unknown", source: "Patrik Hubner" },
   { text: "the world of computers and code to everyday experience", source: "Johnathan Minard" }
 ];
