@@ -2,14 +2,14 @@
 // this is the only part of the file you need to edit!
 
 const quotes = [
-  { text: "write your own definition", source: "name of source" },
-  { text: "a chance for code to be wrong", source: "Sara" },
-  { text: "surprise, exploration, and aesthetic exploration", source: "Sally" },
-  { text: "process over results", source: "Sam" },
-  { text: "form over function", source: "Sean" },
-  { text: "iterative and experimental", source: "Scooby" },
-  { text: "a community of practice", source: "Seth" },
-  { text: "an opportunity to stick it to the man", source: "Shifty-eyed Susan" }
+  { text: "aesthically pleasing with emotional impact", source: "Southern Methodist University" },
+  { text: "unique and memorable brand experience", source: "Laura Valtere" },
+  { text: "bridging the gap between technologists and artists", source: "Ahmad Moussa" },
+  { text: "creative dialogue with the computer", source: "Tim Rodenbrocker" },
+  { text: "the paintbrush and the computer is the canvas", source: "University of York" },
+  { text: "experimental, playful, serendipitous, pushing boundaries", source: "Fabian Van Sluijs & Axelle van Wynsberghe" },
+  { text: "an act of curiosity - an ongoing conversation with the unknown", source: "Patrik Hubner" },
+  { text: "the world of computers and code to everyday experience", source: "Johnathan Minard" }
 ];
 // no need to edit anything below this line! 
 // if you have made an error, you can check your history to see what might have gone wrong
