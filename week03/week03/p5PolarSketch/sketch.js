@@ -13,7 +13,9 @@ function draw() {
   // Insert your drawing here
   setCenter(width/2, height/2);
     fill(0,255,255);
+    //polarEllipses(10, 50,40,4);
     polarEllipses(5, 10, 45, 0);
+    
 
 
     // polarEllipses(5, 0, 0, 2, function(...args) {
