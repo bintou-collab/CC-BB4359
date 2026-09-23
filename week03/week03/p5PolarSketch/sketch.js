@@ -11,10 +11,21 @@ function draw() {
   background(255,255,0);
   //text("p5.Polar Template", 100, height/2);
   // Insert your drawing here
-  setCenter(width/2, height/2);
-    fill(0,255,255);
+  
+    for (i=0; i<10; i++){
+      for (j=0; j<10; j++){
+        polarEllipses(width/2, height/2, 100-i*30+j*20, 200-i*30+j*20);
+      if ((i%5==4 && j%5===4) || (i%5==4 && j%5===1)){
+        fill(0,255,255);
+      }
+      else{
+        fill(255,255,0);
+      }
+    }
+  }
+    setCenter(width/2, height/2);
     //polarEllipses(10, 50,40,4);
-    polarEllipses(5, 10, 45, 0);
+    //polarEllipses(5, 10, 45, 0);
     
 
 
