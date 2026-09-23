@@ -8,13 +8,13 @@ function setup() {
 }
 
 function draw() {
-  background(255,0,0);
+  background(255,255,0);
   //text("p5.Polar Template", 100, height/2);
   // Insert your drawing here
   setCenter(width/2, height/2);
     fill(0,255,255);
     polarEllipses(5, 10, 45, 0);
-    
+
 
     // polarEllipses(5, 0, 0, 2, function(...args) {
     //     fill(args[0]*10, args[0]*40, args[0]*40, 255); //color
