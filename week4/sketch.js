@@ -49,21 +49,6 @@ function myDrawing() {
     stroke(0,255,255); //cyan
   }
 
-// function mouseIsPressed(){
-//     polarEllipses(random(10,500),random(50,spaceY),60,random(0,50));
-// }
-  
-  // strokeWeight(1); 
-  // let s = random(50,200);
-  // // Note: if your ellipse() doesn't show up when you're trying to export as an .svg,
-  // // try using circle() instead
-  // circle(width/2,height/2, s);
-  // setCenter(width/2, height/2);
-  // polarTriangles(random(20,30), random(50,70), 100);
-
-// Tip: When plotting, strokeWeight() doesn't affect your drawing. 
-// To change the thickness of your drawing, change your pen/marker/etc
-// - or experiment with code (use a for loop to create an 'outline')
 
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
