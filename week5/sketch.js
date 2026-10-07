@@ -12,6 +12,8 @@ function draw() {
   push();
   noStroke();
   translate(150,150);
+  let angle = second();
+  rotate(angle);
   fill(0,0,0); // color of the hair
   polarEllipses(10,90,20,20);
   pop();
@@ -20,6 +22,8 @@ function draw() {
   push();
   noStroke();
   translate(350,150);
+  let angle2 = second();
+  rotate(angle2);
   fill(0,0,0); // color of the hair
   polarEllipses(10,90,20,20);
   pop();
@@ -38,7 +42,7 @@ function draw() {
   //face
   push();
   noStroke();
-  fill(100,65,23); //color of skin
+  fill(150,75,0); //color of skin
   ellipse(0,0, 200, 240);
   pop();
 
@@ -58,7 +62,21 @@ function draw() {
   rotate(45);
   rect(-45,-30,5,30,10);
   pop();
-  
+
+  //right lashes
+  push();
+  rotate(45);
+  rect(20,-50,5,10,5);
+  rect(27,-50,5,10,5);
+  pop();
+
+  //left lashes
+  push();
+  rotate(100);
+  rect(-40,-35,5,10,5);
+  rect(-48,-33,5,10,5);
+  pop();
+
   //eyes
   let xEye= 40;
   let yEye= 0;
@@ -67,7 +85,7 @@ function draw() {
   ellipse(-xEye, -yEye, 30, 20);
   ellipse(xEye, yEye, 30, 20);
   pop();
-
+  //irises
   fill(90,30,23);
   ellipse(-xEye, -yEye, 15, 15);
   ellipse(xEye, yEye, 15, 15);
@@ -78,34 +96,27 @@ function draw() {
   
   //mouth
   fill(255);
-  rect(0,70,130,50,10);
+  arc(0, 50, 80, 80, 0, PI, QUARTER_PI, OPEN);
   
   //time 
   let d = day();
   let h = hour();
   let s = second();
-  fill(0);
+  fill(255);
   textSize(20);
-  text(`${d} :`,10,93,130, 60);
+  text(`${d} :`,-90,-70,130, 60);
   textSize(10);
-  text(`day`,0,113,110, 60);
+  text(`day`,-105,-50,110, 60);
 
   textSize(20);
-  text(`${h} :`,45,93,130, 60);
+  text(`${h}`,-55,-70,130, 60);
   textSize(10);
-  text(`hours`,35,113,110, 60);
+  text(`hours`,-65,-50,110, 60);
 
   textSize(20);
-  text(`${s}`,94,93,130, 60);
+  text(`${s}`,160,-70,130, 60);
   textSize(10);
-  text(`seconds`,75,113,110, 60);
-  if (s===10){
-    background(128,0,128);
-    //ball bounces across the canvas
-  }
-  if (s===0){
-    background(255,0,0);
-  }
+  text(`seconds`,140,-50,110, 60);
   
 }
 
