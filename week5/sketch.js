@@ -1,25 +1,12 @@
-var bg;
-let lastMin;
 
 function setup() {
   let canvas = createCanvas(500, 500);
   canvas.parent('week5-sketch');
   rectMode(CENTER);
-  bg = color(0,200,255); //starting color
-  lastMin = minute();
-}
-
-function randomColor(){
-  bg = color(0,random(200),random(255));
 }
 
 function draw() {
-  let curMin = minute(); //used IDM LLM to help fix this error of bg color change every minute
-  if (curMin !== lastMin){
-    randomColor();
-    lastMin = curMin;
-  }
-  background(bg);
+  background(0,200,255);
   
   //first hair puff on the left
   push();
@@ -109,32 +96,15 @@ function draw() {
   pop();
 
   blowingBubble();
-  //makes the bubble 'pop'
-  for (i=0; i<60; i++){
-     let count= 0;
-     if (second()){
-       count++;
-     }
-     if (count%2==0){
-       poppedBubble();
-     }
-   }
-
+ 
 }
 
-function poppedBubble(){
-  push();
-  noStroke();
-  fill(255,192,203); //solid color of gum
-  polarEllipses(4.5,290,130,100);// popped bubble gum
-  pop();
-}
 
 function bubbleGum(){
   push();
   noStroke();
   fill(255,192,203,200);
-  ellipse(0,0,300); // gum -- changed the x and y by the IDM LLM
+  ellipse(0,0,300); // gum 
   pop();
 
   push();
@@ -149,7 +119,6 @@ function bubbleGum(){
 function blowingBubble(){
   let i=millis()/10000;
   push();
-  translate(15,70); //added from the IDM LLM
   scale(sin(i));
   bubbleGum();
   pop();
