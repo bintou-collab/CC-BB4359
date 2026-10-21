@@ -1,20 +1,33 @@
-// p5.plotSvg + p5.Polar Template
+var bg;
+let lastMin;
 
 function setup() {
   let canvas = createCanvas(500, 500);
   canvas.parent('week5-sketch');
   rectMode(CENTER);
+  bg = color(0,200,255); //starting color
+  lastMin = minute();
+}
+
+function randomColor(){
+  bg = color(0,random(200),random(255));
 }
 
 function draw() {
-  background(0,200,255);
+  let curMin = minute(); //used IDM LLM to help fix this error of bg color change every minute
+  if (curMin !== lastMin){
+    randomColor();
+    lastMin = curMin;
+  }
+  background(bg);
+  
   //first hair puff on the left
   push();
   noStroke();
   translate(150,150);
   let angle = second();
   rotate(angle);
-  fill(0,0,0); // color of the hair
+  fill(0); // color of the hair
   polarEllipses(10,90,20,20);
   pop();
 
@@ -24,19 +37,9 @@ function draw() {
   translate(350,150);
   let angle2 = second();
   rotate(angle2);
-  fill(0,0,0); // color of the hair
+  fill(0); // color of the hair
   polarEllipses(10,90,20,20);
   pop();
-
-  //text welcoming users and instructing
-  textFont('Verdana', 15);
-  push();
-  fill(0);
-  textStyle(BOLD);
-  text("Welcome to the Cultural Countdown", 100, 400);
-  pop();
-  fill(0);
-  text("Choose the date and find out how long until then", 60, 420);
  
   translate(width/2, height/2);
   //face
@@ -66,6 +69,7 @@ function draw() {
   //right lashes
   push();
   rotate(45);
+  fill(0);
   rect(20,-50,5,10,5);
   rect(27,-50,5,10,5);
   pop();
@@ -73,6 +77,7 @@ function draw() {
   //left lashes
   push();
   rotate(100);
+  fill(0);
   rect(-40,-35,5,10,5);
   rect(-48,-33,5,10,5);
   pop();
@@ -81,6 +86,8 @@ function draw() {
   let xEye= 40;
   let yEye= 0;
   push();
+  stroke(1); //eyeliner color
+  strokeWeight(2); //eyeliner thickness
   fill(255,255,255);
   ellipse(-xEye, -yEye, 30, 20);
   ellipse(xEye, yEye, 30, 20);
@@ -96,38 +103,54 @@ function draw() {
   
   //mouth
   fill(255);
-  arc(0, 50, 80, 80, 0, PI, QUARTER_PI, OPEN);
-  
-  //time 
-  let d = day();
-  let h = hour();
-  let s = second();
-  fill(255);
-  textSize(20);
-  text(`${d} :`,-90,-70,130, 60);
-  textSize(10);
-  text(`day`,-105,-50,110, 60);
+  ellipse(15, 70, 20, 20);
+  push();
+  rotate(-45);
+  pop();
 
-  textSize(20);
-  text(`${h}`,-55,-70,130, 60);
-  textSize(10);
-  text(`hours`,-65,-50,110, 60);
+  blowingBubble();
+  //makes the bubble 'pop'
+  for (i=0; i<60; i++){
+     let count= 0;
+     if (second()){
+       count++;
+     }
+     if (count%2==0){
+       poppedBubble();
+     }
+   }
 
-  textSize(20);
-  text(`${s}`,160,-70,130, 60);
-  textSize(10);
-  text(`seconds`,140,-50,110, 60);
-  
 }
 
-/*
-This template uses the following sketch as a starting point: 
-https://editor.p5js.org/golan/sketches/LRTXmDg2q
+function poppedBubble(){
+  push();
+  noStroke();
+  fill(255,192,203); //solid color of gum
+  polarEllipses(4.5,290,130,100);// popped bubble gum
+  pop();
+}
 
-Additional references/info:
-https://github.com/golanlevin/p5.plotSvg
-https://github.com/liz-peng/p5.Polar
-https://github.com/golanlevin/p5.plotSvg/blob/main/documentation.md#beginrecordsvg
-https://github.com/golanlevin/p5.plotSvg/blob/main/documentation.md#endrecordsvg
+function bubbleGum(){
+  push();
+  noStroke();
+  fill(255,192,203,200);
+  ellipse(0,0,300); // gum -- changed the x and y by the IDM LLM
+  pop();
 
-*/
+  push();
+  rotate(45);
+  noStroke();
+  fill(255,255,255,200);
+  ellipse(-80,-10,50,100); //large light reflection
+  ellipse(-80,70,20,20); //small light reflection
+  pop();
+}
+
+function blowingBubble(){
+  let i=millis()/10000;
+  push();
+  translate(15,70); //added from the IDM LLM
+  scale(sin(i));
+  bubbleGum();
+  pop();
+}
