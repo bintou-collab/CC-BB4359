@@ -1,27 +1,30 @@
-var bg;
-let lastMin;
+let hat;
+let colorList= [];
 
 function setup() {
-  let canvas = createCanvas(500, 500);
-  canvas.parent('week5-sketch');
+  createCanvas(500, 500);
+  background(0,200,255);
   rectMode(CENTER);
-  bg = color(0,200,255); //starting color
-  lastMin = minute();
+  let c = random(150);
+  hat= new accessories(30,20,55,50,20, c);
 }
 
-function randomColor(){
-  bg = color(0,random(200),random(255));
-}
+//type a color
+//function 
 
 function draw() {
-  let curMin = minute(); //used IDM LLM to help fix this error of bg color change every minute
-  if (curMin !== lastMin){
-    randomColor();
-    lastMin = curMin;
+  hat.display();
+  for (i=0; i<colorList.length; i++){
+    colorList[i].display();
+    // if more than 5 colors are typed, they all get removed
+    if (colorList.length> 5){
+      colorList[i]
+    }
   }
-  background(bg);
-  
-  //first hair puff on the left
+
+
+
+//first hair puff on the left
   push();
   noStroke();
   translate(150,150);
@@ -108,8 +111,10 @@ function draw() {
   rotate(-45);
   pop();
 
-  blowingBubble();
+ blowingBubble();
+
 }
+
 
 function bubbleGum(){
   push();
@@ -135,3 +140,23 @@ function blowingBubble(){
   bubbleGum();
   pop();
 }
+
+
+class accessories{
+  constructor(x,y,s,c){
+    this.x = x;
+    this.y = y;
+    this.w = w; //width
+    this.h = h; //height
+    this.r = r; //radius
+    this.c = c; //color
+  }
+
+  display(){
+    fill(this.c);
+    noStroke();
+    rect(this.x,this.y,this.w, this.h,this.r);
+  }
+}
+
+
